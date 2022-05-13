@@ -26,14 +26,5 @@
         $contador_interno = 0;
         $repeticao = 0;
     }
-    $exibir = "Array sorteado = [";
-    foreach($array_numeros as $array_num){
-        $exibir .= $array_num ." "; 
-    }  
-    print_r("$exibir]\n");
-    $view = "Array com número(s) não repetido(s) = [";
-    foreach($novo_array as $novo){
-        $view .= $novo ." "; 
-    }  
-    print_r($view.']');
+ print('Array sorteado = ['.implode(' ',$array_numeros)."]\n".'Array com número(s) não repetido(s) = ['.implode(' ',$novo_array).']');   
 ?>
