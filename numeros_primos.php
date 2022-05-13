@@ -14,11 +14,6 @@
             $inicial++;
         }
         return $primos;
-    }
-    $array_primos = primos(10,29);
-    $exibir = "[";
-    foreach($array_primos as $primos){
-        $exibir .= $primos ." ";
-    }
-    print("Array: $exibir]");
+    } 
+    print('Array: ['. implode(' ',$array_primos = primos(10,29)).']');
 ?>
