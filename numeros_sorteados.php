@@ -1,24 +1,39 @@
 <?php
-    Function primos($inicial,$final){
-        $primos = array();
-        while($inicial < $final){
-            $quant_divisores = 0;
-            for($contador = 2; $contador <= $inicial;$contador++){
-                if($inicial % $contador == 0){
-                    $quant_divisores++;
-                }
-            }
-            if($quant_divisores < 2){
-                array_push($primos,$inicial);
-            }
-            $inicial++;
+    function quant_numeros(){
+        $array_numeros_sorteados = array();
+        while(count($array_numeros_sorteados) < 20){
+            $num_sorteado = rand(1,10);
+            array_push($array_numeros_sorteados,$num_sorteado); 
         }
-        return $primos;
+        return $array_numeros_sorteados;
     }
-    $array_primos = primos(10,29);
-    $exibir = "[";
-    foreach($array_primos as $primos){
-        $exibir .= $primos ." ";
+    $array_numeros = quant_numeros();
+    $contador_externo = 0;
+    $contador_interno = 0;
+    $repeticao = 0;
+    $novo_array = array();
+    while($contador_externo < count($array_numeros)){
+        while($contador_interno < count($array_numeros) ){
+            if($array_numeros[$contador_externo] == $array_numeros[$contador_interno]){
+                $repeticao = $repeticao + 1;
+            }
+            $contador_interno++;
+        }
+        if($repeticao == 1){
+            array_push($novo_array,$array_numeros[$contador_externo]);
+        }
+        $contador_externo++;
+        $contador_interno = 0;
+        $repeticao = 0;
     }
-    print("Array: $exibir]");
+    $exibir = "Array sorteado = [";
+    foreach($array_numeros as $array_num){
+        $exibir .= $array_num ." "; 
+    }  
+    print_r("$exibir]\n");
+    $view = "Array com número(s) não repetido(s) = [";
+    foreach($novo_array as $novo){
+        $view .= $novo ." "; 
+    }  
+    print_r($view.']');
 ?>
