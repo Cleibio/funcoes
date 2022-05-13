@@ -26,5 +26,6 @@
         $contador_interno = 0;
         $repeticao = 0;
     }
- print('Array sorteado = ['.implode(' ',$array_numeros)."]\n".'Array com número(s) não repetido(s) = ['.implode(' ',$novo_array).']');   
+
+    print('Array sorteado = ['.implode(' ',$array_numeros)."]\n".'Array com número(s) não repetido(s) = ['.implode(' ',$novo_array).']');
 ?>
